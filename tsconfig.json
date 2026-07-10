@@ -18,7 +18,10 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@shared/ui": ["src/shared/components/ui"],
+      "@shared/lib": ["src/shared/lib"],
+      "@shared/*": ["src/shared/*"]
     }
   },
   "include": ["src"]

@@ -1,8 +1,4 @@
-import { useState } from 'preact/hooks'
-import { PageLayout } from '../../components/ui/PageLayout'
-import { Button } from '../../components/ui/Button'
-// import { Spinner } from '../../components/ui/Spinner'
-
+import { PageLayout, Button } from "@/shared/components/ui"
 
 export function Home() {
 

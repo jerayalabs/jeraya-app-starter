@@ -12,5 +12,6 @@ const jeraya = createApp({
 
 export const db = jeraya.db
 export const user = jeraya.user
+// export const storage = jeraya.storage
 
 export default jeraya

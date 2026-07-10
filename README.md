@@ -1,4 +1,4 @@
-# Simba
+# Jeraya App Starter
 
 A senior-level starter template built with **Preact**, **Vite**, **Tailwind CSS v4**, **DaisyUI**, and the **Jeraya SDK**, with a **Fastify** backend API.
 
