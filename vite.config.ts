@@ -1,0 +1,40 @@
+/// <reference types="vitest" />
+import { defineConfig } from 'vite'
+import preact from '@preact/preset-vite'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [tailwindcss(), preact()],
+  server: {
+    port: 5173,
+    cors: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+    },
+    hmr: {
+      host: 'localhost',
+      port: 5173,
+      protocol: 'ws',
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'index.js',
+        assetFileNames: '[name].[ext]',
+        chunkFileNames: '[name].js',
+      },
+    },
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './tests/setup.ts',
+  },
+})

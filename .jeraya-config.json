@@ -1,0 +1,8 @@
+{
+  "appId": "123456fwefwe5",
+  "name": "simba",
+  "prefix": "simba",
+  "type": "mini-app",
+  "distFolder": "dist",
+  "version": "1.0.0"
+}
