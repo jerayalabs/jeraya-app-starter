@@ -6,6 +6,7 @@ import { getAppBasePath } from '../shared/config/basePath'
 const basePath = getAppBasePath();
 
 export function App() {
+
   return (
     <Router base={basePath} hook={useHashLocation}>
       <Route component={Home} path="/" />
