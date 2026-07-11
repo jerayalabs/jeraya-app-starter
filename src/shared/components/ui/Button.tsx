@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 const variantStyles: Record<string, string> = {
-  primary: 'rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-60',
+  primary: 'rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-emerald-700 disabled:opacity-60',
   secondary: 'rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800 disabled:opacity-60',
   ghost: 'rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 disabled:opacity-60',
 }
