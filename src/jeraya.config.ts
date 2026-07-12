@@ -1,8 +1,9 @@
 import { buildConfig } from '@jeraya/sdk'
-import { Projects } from './collections/Projects'
-import { Tasks } from './collections/Tasks'
+import collections from './collections'
 
 export default buildConfig({
-  collections: [Projects, Tasks],
+  collections: [
+    ...collections
+  ],
   webapp: {},
 })
