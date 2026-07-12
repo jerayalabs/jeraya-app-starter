@@ -10,6 +10,7 @@ async function dev() {
   const baseId = process.env.VITE_JERAYA_BASEID
   const dynamicUrl = `http://localhost:3000/#/lunch-app/${(jerayaLocalConfig as { appId: string }).appId}`
 
+  
   // console.log('Starting Fastify API server...')
   // await startServer()
 
