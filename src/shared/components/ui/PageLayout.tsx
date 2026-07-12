@@ -31,7 +31,7 @@ export function PageLayout({
   tabs = [], // 3. Default to an empty array
 }: PageLayoutProps) {
   return (
-    <div className="flex flex-col min-h-screen w-full bg-gray-50">
+    <div className="flex flex-col min-h-screen w-full bg-gradient-to-br">
       {/* 4. Render the Header component and pass the props down to it */}
       <Header
         title={title}
