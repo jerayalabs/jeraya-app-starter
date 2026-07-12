@@ -1,9 +1,22 @@
+export interface ListResult<T = any> {
+  list: T[]
+  pageInfo?: {
+    isFirstPage: boolean
+    isLastPage: boolean
+    page: number
+    pageSize: number
+    totalRows: number
+  }
+}
+
 export interface JerayaTableRef {
   records: {
-    list: (params?: { limit?: number; offset?: number }) => Promise<unknown>
+    list: (params?: { where?: string; limit?: number; offset?: number; sort?: string; fields?: string[] }) => Promise<ListResult>
     create: (data: Record<string, unknown>) => Promise<unknown>
     update: (id: string, data: Record<string, unknown>) => Promise<unknown>
     bulkCreate: (data: Record<string, unknown>[]) => Promise<unknown>
+    delete: (id: string) => Promise<unknown>
+    count: (where?: string) => Promise<number>
   }
   columns: {
     list: () => Promise<unknown>
