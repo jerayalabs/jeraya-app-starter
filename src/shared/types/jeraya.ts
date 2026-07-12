@@ -48,7 +48,7 @@ export interface JerayaApp {
 export interface JerayaConfig {
   appId: string
   name: string
-  prefix: string
+  prefix?: string
   type: string
   distFolder: string
   version: string

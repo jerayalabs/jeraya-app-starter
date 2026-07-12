@@ -41,7 +41,7 @@ export function PageLayout({
         tabs={tabs}
       />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto p-6">{children}</main>
+      <main className="flex-1 max-w-7xl w-full mx-auto p-6 bg-gradient-to-br">{children}</main>
     </div>
   )
 }
