@@ -1,14 +1,13 @@
 # Jeraya App Starter
 
-A senior-level starter template built with **Preact**, **Vite**, **Tailwind CSS v4**, **DaisyUI**, and the **Jeraya SDK**, with a **Fastify** backend API.
+A starter template built with **Preact**, **Vite**, **Tailwind CSS v4**, **DaisyUI**, and the **Jeraya SDK**.
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
 | Frontend | Preact, Vite, Tailwind CSS v4, DaisyUI |
-| Backend | Fastify (TypeScript) |
-| Database | Jeraya SDK / NocoDB |
+| Database | Jeraya SDK |
 | Auth | Firebase |
 | Testing | Vitest, @testing-library/preact |
 | Tooling | ESLint, Prettier, TypeScript |
@@ -17,27 +16,22 @@ A senior-level starter template built with **Preact**, **Vite**, **Tailwind CSS 
 
 ```
 simba/
-├── src/              # Frontend (Preact + TypeScript)
-│   ├── components/   # Shared UI components
-│   ├── pages/        # Route page components
-│   ├── hooks/        # Custom hooks
-│   ├── services/     # API/business logic
-│   ├── lib/          # SDK clients
-│   ├── collections/  # Jeraya collection definitions
-│   ├── config/       # App configuration
-│   ├── types/        # TypeScript types
-│   └── utils/        # Utility functions
-├── server/           # Backend (Fastify + TypeScript)
-│   ├── routes/       # API route definitions
-│   ├── controllers/  # Request handlers
-│   ├── services/     # Business logic
-│   ├── plugins/      # Fastify plugins
-│   ├── schemas/      # JSON Schema validation
-│   ├── config/       # Server configuration
-│   ├── types/        # Server type definitions
-│   └── utils/        # Server utilities
-├── tests/            # Test suite
-└── scripts/          # Utility scripts
+├── src/
+│   ├── app/              # Frontend (Preact + TypeScript)
+│   │   ├── components/   # Shared UI components
+│   │   ├── pages/        # Route page components
+│   │   ├── hooks/        # Custom hooks
+│   │   ├── services/     # API/business logic
+│   │   ├── lib/          # SDK clients
+│   │   ├── config/       # App configuration
+│   │   ├── types/        # TypeScript types
+│   │   └── utils/        # Utility functions
+│   ├── functions/        # Backend functions (Fastify endpoints)
+│   │   └── hello/        # Sample hello-world function
+│   ├── collections/      # Jeraya collection definitions
+│   └── automations/      # Automation scripts
+├── tests/                # Test suite
+└── scripts/              # Utility scripts
 ```
 
 ## Getting Started
@@ -72,12 +66,30 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:3001
 
+### Functions
+
+Backend functions are located in `src/functions/`. Each function is organized by feature:
+
+```
+src/functions/
+├── hello/
+│   └── route.ts      # GET /hello endpoint
+└── [feature]/
+    └── route.ts      # Feature-specific endpoint
+```
+
+To add a new function:
+1. Create a new folder under `src/functions/`
+2. Add a `route.ts` file with your Fastify route handler
+3. The function will be automatically built and bundled
+
 ### Scripts
 
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development servers (Vite + Fastify) |
 | `npm run build` | Build for production |
+| `npm run build:functions` | Build backend functions only |
 | `npm run preview` | Preview production build |
 | `npm test` | Run tests (watch mode) |
 | `npm run test:run` | Run tests once |

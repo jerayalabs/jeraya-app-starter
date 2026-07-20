@@ -33,6 +33,8 @@ export default defineConfig({
     },
   },
   build: {
+    outDir : './dist/app',
+    emptyOutDir : true,
     rollupOptions: {
       output: {
         entryFileNames: 'index.js',
